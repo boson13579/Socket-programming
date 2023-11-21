@@ -37,6 +37,7 @@ class ChatServer:
 
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.server.setblocking(0)
         self.server.bind(("localhost", 12345))
         self.server.listen(5)
 
